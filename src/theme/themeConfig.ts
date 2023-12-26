@@ -3,7 +3,13 @@ import type { ThemeConfig } from 'antd';
 const theme: ThemeConfig = {
   token: {
     fontSize: 16,
-    colorPrimary: '#52c41a',
+    colorPrimary: '#dadada',
+  },
+  components: {
+    Layout: {
+      headerBg: '#ffffff', 
+      headerHeight: 64,
+    },
   },
 };
 

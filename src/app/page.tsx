@@ -13,6 +13,7 @@ export default function Home() {
         <Card hoverable className="w-full">
           <Flex className="w-full" gap={24}>
             <Image
+              priority
               alt="example"
               src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
               width={240}
