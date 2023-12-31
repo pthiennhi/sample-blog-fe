@@ -1,34 +1,48 @@
 "use client";
 
+import logo from "@/../public/logo_vietnam_black.png";
 import { HeaderItems } from "@/constants/HearderItems";
-import { Flex, Layout, Menu, MenuItemProps, MenuProps } from "antd";
+import { Button, Flex, Input, Menu } from "antd";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
-import Link from "next/link";
+import Image from "next/image";
+import SearchIcon from "./icon/SearchIcon";
 
-import React from "react";
+const { Search } = Input;
 
-const { Header } = Layout;
-
-// const items: MenuItemType[] = HeaderItems.map((item, i) => ({
-//   ...item,
-//   key: i.toString(),
-// }));
- 
+const items: MenuItemType[] = HeaderItems.map((item, i) => ({
+  ...item,
+  key: i.toString(),
+}));
 
 export default function HeaderLayout() {
-
-
   return (
-    <Layout>
-      <Header className="flex items-center">
-        <Menu
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["0"]}
-          className="flex-1 min-w-0"
-          // items={items}
-        />
-      </Header>
-    </Layout>
+    <Flex
+      className="mx-24 my-4 flex-1 min-w-0 rounded-2xl shadow-sm h-16 bg-[#fafafa] px-4"
+      justify="space-between"
+      align="center"
+    >
+      <Image alt="logo" src={logo} width={100} priority />
+      <Menu
+        style={{ backgroundColor: "transparent", border: "none" }}
+        mode="horizontal"
+        defaultSelectedKeys={["0"]}
+        items={items}
+        className="flex min-w-[240px] justify-end gap-3"
+      />
+      <Search
+        placeholder="search blog..."
+        allowClear
+        style={{ width: "360px" }}
+        bordered={false}
+        className="rounded-xl bg-[#f5f5f5] text-[#606060]"
+        enterButton={
+          <Button
+            type="link"
+            style={{ borderRadius: "12px" }}
+            icon={<SearchIcon />}
+          />
+        }
+      />
+    </Flex>
   );
 }

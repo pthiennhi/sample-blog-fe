@@ -4,7 +4,7 @@ import "./globals.css";
 import StyledComponentsRegistry from "../lib/AntdRegistry";
 import HeaderLayout from "../components/HeaderLayout";
 import FooterLayout from "../components/FooterLayout";
-
+import TanstackProvider from "@/providers/TanstackProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,14 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StyledComponentsRegistry>
-          <HeaderLayout />
-          <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            {children}
-          </main>
-
-          <FooterLayout />
-        </StyledComponentsRegistry>
+        <TanstackProvider>
+          <StyledComponentsRegistry>
+            <HeaderLayout />
+            <main className="flex min-h-screen flex-col items-center justify-between p-12">
+              {children}
+            </main>
+            <FooterLayout />
+          </StyledComponentsRegistry>
+        </TanstackProvider>
+        
       </body>
     </html>
   );

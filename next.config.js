@@ -2,7 +2,17 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['images.unsplash.com', 'os.alipayobjects.com'],
+       
+        remotePatterns: [{
+            protocol: 'https',
+            hostname: 'os.alipayobjects.com',
+            pathname: '/**/*',
+        },{
+            protocol: 'https',
+            hostname: 'https://source.unsplash.com',
+            pathname: '/**/*',
+        }],
+
     },
 }
 

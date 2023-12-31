@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function HomeIcon() {
+export default function HomeIcon({className, width, height} : {className?: string, width?: number, height?: number}) {
   return (
     <svg
-      width="24"
-      height="24"
+      className={ className ? className : ""}
+      width={width? width : 24}
+      height={height? height : 24}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
