@@ -5,6 +5,8 @@ import StyledComponentsRegistry from "../lib/AntdRegistry";
 import HeaderLayout from "../components/HeaderLayout";
 import FooterLayout from "../components/FooterLayout";
 import TanstackProvider from "@/providers/TanstackProvider";
+import { ConfigProvider } from "antd";
+import theme from "@/theme/themeConfig";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,17 +21,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body suppressHydrationWarning={true} className={inter.className}>
         <TanstackProvider>
           <StyledComponentsRegistry>
             <HeaderLayout />
-            <main className="flex min-h-screen flex-col items-center justify-between p-12">
-              {children}
-            </main>
+            <ConfigProvider theme={theme}>
+              <main className="flex min-h-screen flex-col items-center justify-between p-12">
+                {children}
+              </main>
+            </ConfigProvider>
             <FooterLayout />
           </StyledComponentsRegistry>
         </TanstackProvider>
-        
       </body>
     </html>
   );

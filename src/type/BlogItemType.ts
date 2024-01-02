@@ -7,7 +7,7 @@ export type BlogItemType = {
     views: number;
     commentsCount: number;
     status: string;
-    publishedDate: string;
+    publishDate: string;
     lastUpdated: string;
-    createdAt: string;
+    
 };

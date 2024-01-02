@@ -6,6 +6,7 @@ import { Button, Flex, Input, Menu } from "antd";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
 import Image from "next/image";
 import SearchIcon from "./icon/SearchIcon";
+import Link from "next/link";
 
 const { Search } = Input;
 
@@ -21,7 +22,9 @@ export default function HeaderLayout() {
       justify="space-between"
       align="center"
     >
-      <Image alt="logo" src={logo} width={100} priority />
+      <Link href="/">
+        <Image alt="logo" src={logo} width={100} priority />
+      </Link>
       <Menu
         style={{ backgroundColor: "transparent", border: "none" }}
         mode="horizontal"
