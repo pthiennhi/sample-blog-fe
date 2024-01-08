@@ -8,10 +8,12 @@ import Link from "next/link";
 export const HeaderItems: HeaderItemType[] = [
   {
     icon: (
-      <Link href={"/"}>
+      <Link href="/">
         <Flex align="center" justify="space-between" gap={6}>
           <HomeIcon width={16} height={16} />
-          <Title level={5} children="Home" style={{ margin: 0 }} />
+          <Title level={5} style={{ margin: 0 }} >
+            Home
+          </Title>
         </Flex>
       </Link>
     ),
@@ -21,7 +23,9 @@ export const HeaderItems: HeaderItemType[] = [
       <Link href="/about">
         <Flex align="center" justify="space-between" gap={6}>
           <HeartIcon width={16} height={16} />
-          <Title level={5} children="About" style={{ margin: 0 }} />
+          <Title level={5} style={{ margin: 0 }} >
+            About
+          </Title>
         </Flex>
       </Link>
     ),

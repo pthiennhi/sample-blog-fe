@@ -7,6 +7,7 @@ import FooterLayout from "../components/FooterLayout";
 import TanstackProvider from "@/providers/TanstackProvider";
 import { ConfigProvider } from "antd";
 import theme from "@/theme/themeConfig";
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
           <StyledComponentsRegistry>
             <HeaderLayout />
             <ConfigProvider theme={theme}>
-              <main className="flex min-h-screen flex-col items-center justify-between p-12">
+              <main className="flex min-h-screen flex-col items-center justify-between px-12 py-24">
                 {children}
               </main>
             </ConfigProvider>
